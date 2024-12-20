@@ -6,15 +6,22 @@ using static Define;
 
 public class UI_TitleScene : UI_Scene
 {
-    enum GameObjects
+	enum GameObjects
     {
-        StartImage
+        StartImage,
     }
 
     enum Texts
     {
-        DisplayText
+        GameTitleText,
+		DisplayText,
     }
+
+	enum Images
+	{
+		Background,
+		GameTitleIamge,
+	}
 
     public override bool Init()
     {
@@ -22,6 +29,7 @@ public class UI_TitleScene : UI_Scene
             return false;
 
         BindObjects(typeof(GameObjects));
+		BindImages(typeof(Images));
         BindTexts(typeof(Texts));
 
 		GetObject((int)GameObjects.StartImage).BindEvent((evt) =>
@@ -50,8 +58,6 @@ public class UI_TitleScene : UI_Scene
 
 				GetObject((int)GameObjects.StartImage).gameObject.SetActive(true);
 				GetText((int)Texts.DisplayText).text = "Touch To Start";
-
-
 			}
 		});
 	}
