@@ -11,6 +11,7 @@ public class UI_GameScene : UI_Scene
     {
         Background,
         TopBackgroundPanel,
+        CurrentScoreBackground,
     }
 
     public override bool Init()
